@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import RestroCard from "./RestroCard"
 import ShimmerUi from "./ShimmerUi.js"
+import { Link } from "react-router"
 
 const Body = () => {
     const [resturantList, updateResturantList] = useState([])
@@ -25,7 +26,6 @@ const Body = () => {
                     <input type="text" name="Search" className="textField" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value)}} />
                     <button onClick={()=>{
-                        console.log(resturantList)
                         let filterSearch=resturantList.filter((item)=>item.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilterResturantList(filterSearch)
                     }}>Search</button>
@@ -37,7 +37,7 @@ const Body = () => {
             </div>
             <div className="resturant-container">
                 {
-                    filterresturantList.map((item) => <RestroCard key={item.info.id} RestoData={item} />)
+                    filterresturantList.map((item) => <Link key={item.info.id} to={`/resturant/${item.info.id}`}><RestroCard  RestoData={item} /></Link>)
                 }
             </div>
         </div>
