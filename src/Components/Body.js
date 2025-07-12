@@ -17,23 +17,23 @@ const Body = () => {
         return <ShimmerUi />
     }
     return (
-        <div className="body-container">
-            <div className="filter-container">
-                <div className="search">
-                    <input type="text" name="Search" className="textField" value={searchText} onChange={(e) => {
+        <div className="p-4 m-4">
+            <div className="p-2 m-4 flex justify-center">
+                <div className="">
+                    <input type="text" name="Search" className="p-2 border border-solid border-black" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value)
                     }} />
                     <button onClick={() => {
                         let filterSearch = resturantList.filter((item) => item.info.name.toLowerCase().includes(searchText.toLowerCase()))
                         setFilterResturantList(filterSearch)
-                    }}>Search</button>
+                    }} className="px-4 bg-green-200 m-3 rounded-sm cursor-pointer">Search</button>
                 </div>
                 <button onClick={() => {
                     const filterResturant = resturantList.filter(item => item.info.avgRating > 4.3)
                     updateResturantList(filterResturant)
-                }}>Top Rated Resturant</button>
+                }} className="px-3 bg-gray-200">Top Rated Resturant</button>
             </div>
-            <div className="resturant-container">
+            <div className="flex flex-wrap">
                 {
                     filterresturantList.map((item) => <Link key={item.info.id} to={`/resturant/${item.info.id}`}><RestroCard RestoData={item} /></Link>)
                 }
