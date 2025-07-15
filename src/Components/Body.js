@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import RestroCard from "./RestroCard"
+import RestroCard, { withEnhancedRestroCard } from "./RestroCard"
 import ShimmerUi from "./ShimmerUi.js"
 import { Link } from "react-router"
 import useResturantList from "../utils/Hooks/useResturantList.js"
@@ -16,6 +16,7 @@ const Body = () => {
     if (resturantList.length === 0) {
         return <ShimmerUi />
     }
+    const ResturantWithPromoted = withEnhancedRestroCard(RestroCard)
     return (
         <div className="p-4 m-4">
             <div className="p-2 m-4 flex justify-center">
@@ -35,7 +36,15 @@ const Body = () => {
             </div>
             <div className="flex flex-wrap">
                 {
-                    filterresturantList.map((item) => <Link key={item.info.id} to={`/resturant/${item.info.id}`}><RestroCard RestoData={item} /></Link>)
+                    filterresturantList.map((item) =>
+
+                        <Link key={item.info.id} to={`/resturant/${item.info.id}`}>
+                            {
+                                item.info.aggregatedDiscountInfoV3 ? <ResturantWithPromoted RestoData={item}/> : <RestroCard RestoData={item} />
+                            }
+
+
+                        </Link>)
                 }
             </div>
         </div>
