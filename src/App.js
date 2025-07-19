@@ -6,13 +6,18 @@ import Contact from "./Components/Contact";
 import About from "./Components/About";
 import NotFound from "./Components/NotFound";
 import ResturantDetails from "./Components/ResturantDetails"
+import { Provider } from "react-redux";
+import rootStore from "./utils/Store/rootStore";
+import Cart from "./Components/Cart";
 const App = () => {
 
     return (
-        <div>
-            <Header />
-            <Outlet />
-        </div>
+        <Provider store={rootStore}>
+            <div>
+                <Header />
+                <Outlet />
+            </div>
+        </Provider>
     )
 }
 const router = createBrowserRouter([{
@@ -34,7 +39,11 @@ const router = createBrowserRouter([{
         {
             path: "/resturant/:resId",
             element: <ResturantDetails />
-        }
+        },
+        {
+            path: "/cart",
+            element: <Cart />
+        },
     ],
     errorElement: <NotFound />
 }
