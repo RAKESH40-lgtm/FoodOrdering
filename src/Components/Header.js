@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { LOGO_URL } from "../utils/constant"
-import { Link } from "react-router"
 import useOnlineStatus from "../utils/Hooks/useOnlineStatus"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 const Header = () => {
     const [userInfo, setUserInfo] = useState("Login")
