@@ -1,7 +1,6 @@
 import ReactDOM from "react-dom/client"
 import Header from "./Components/Header";
 import Body from "./Components/Body";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Contact from "./Components/Contact";
 import About from "./Components/About";
 import NotFound from "./Components/NotFound";
@@ -9,6 +8,7 @@ import ResturantDetails from "./Components/ResturantDetails"
 import { Provider } from "react-redux";
 import rootStore from "./utils/Store/rootStore";
 import Cart from "./Components/Cart";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 const App = () => {
 
     return (

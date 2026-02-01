@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import RestroCard, { withEnhancedRestroCard } from "./RestroCard"
 import ShimmerUi from "./ShimmerUi.js"
-import { Link } from "react-router"
 import useResturantList from "../utils/Hooks/useResturantList.js"
+import { Link } from "react-router-dom"
 
 const Body = () => {
     const listdata = useResturantList()
