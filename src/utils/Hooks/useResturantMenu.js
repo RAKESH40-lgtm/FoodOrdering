@@ -9,8 +9,9 @@ const useResturantMenu = (resId) => {
 
     const fetchData = async () => {
         const apiCall = await fetch(RESTO_URL + resId)
-        const convertJson = await apiCall.json()
-        setResturantData(convertJson)
+        console.log(apiCall)
+        // const convertJson = await apiCall.json()
+        // setResturantData(convertJson)
     }
     return resturantData
 }
