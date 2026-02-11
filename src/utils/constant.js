@@ -1,5 +1,5 @@
 export const LOGO_URL = "https://img.freepik.com/premium-vector/online-food-order-logo-icon_61778-45.jpg"
 export const IMAGE_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 export const ITEM_IMAGE_URL = ""
-export const RESTO_URL = "https://corsproxy.io/?https://namastedev.com/api/v1/listRestaurantMenu/"
-export const MENU_LIST_URL = "https://corsproxy.io/?https://namastedev.com/api/v1/listRestaurants"
+export const RESTO_URL = "/api/proxy/listRestaurantMenu/"
+export const MENU_LIST_URL = "/api/proxy/listRestaurants"

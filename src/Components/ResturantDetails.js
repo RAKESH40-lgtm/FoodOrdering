@@ -16,14 +16,14 @@ const ResturantDetails = () => {
     }
     console.log(resturantData)
     const { name } = resturantData?.cards[2].card.card.info
-    const categories = resturantData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item) => item?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    const categories = resturantData?.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter((item) => item?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
     console.log(categories)
     return (
         <div className="flex justify-center m-8 flex-col items-center">
             <h1 className="text-2xl">{name}</h1>
             {
-                categories.map((item, index) =>
-                    <ResturantData categories={item.card.card} key={item.card.card.categoryId} showAccordian={index === showIndex ? true : false} showFunction={() => showFunction(index)} />
+                categories?.map((item, index) =>
+                    <ResturantData categories={item.card.card} key={item.card.card.id} showAccordian={index === showIndex ? true : false} showFunction={() => showFunction(index)} />
                 )
             }
 

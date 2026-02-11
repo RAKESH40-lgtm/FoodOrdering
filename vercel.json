@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/proxy/:match*",
+      "destination": "https://namastedev.com/api/v1/:match*"
+    }
+  ]
+}

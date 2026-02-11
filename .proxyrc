@@ -1,0 +1,9 @@
+{
+  "/api/proxy": {
+    "target": "https://namastedev.com/api/v1/",
+    "pathRewrite": {
+      "^/api/proxy": ""
+    },
+    "changeOrigin": true
+  }
+}
