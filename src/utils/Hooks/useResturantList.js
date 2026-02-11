@@ -8,8 +8,9 @@ const useResturantList = () => {
     }, [])
     const fetchData = async () => {
         const callAPi = await fetch(MENU_LIST_URL)
-        const data = await callAPi.json()
-        updateResturantList(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        const data = await callAPi.json();
+        console.log(data.data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+        updateResturantList(data?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     return resturantList
 }
