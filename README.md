@@ -30,7 +30,7 @@ Here's a list of key learning milestones and activities completed in this projec
 
 ### 🔌 API Integration
 - ✅ **Playing with Live API Data and Handling It Effectively**  
-  Integrated real-time data from the **Swiggy public API** to fetch and display restaurant listings, menu items, and more.  
+  Integrated real-time data from the **Namaste dev API** to fetch and display restaurant listings, menu items, and more.  
   Included features:
   - Dynamic fetching of restaurant data
   - Graceful handling of loading and error states
@@ -61,7 +61,7 @@ src/
 - **Redux + Redux Toolkit**
 - **React Router**
 - **Jest + React Testing Library**
-- **Swiggy API** (Public endpoints for food data)
+- **Namastedev API** (Public endpoints for food data)
 
 ## 📌 Getting Started
 
